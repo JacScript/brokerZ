@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Announcement from "../components/Announcement";
+import NavBar from '../components/navbar-component/NavBar';
+import Announcement from "../component/announcement-component/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import { ArrowLeftOutlined , ArrowRightOutlined } from "@material-ui/icons";
 import ProductListSlider from "../components/ProductListSlider";
 
 const Container = styled.div`
@@ -44,7 +43,7 @@ const Option = styled.option``;
 const ProductList = ({popularItems2}) => {
   return (
     <Container>
-        <Navbar/>
+        <NavBar/>
         <Announcement/>
         <Title>Furniture & Electronic Accessories </Title>
         <FilterContainer>

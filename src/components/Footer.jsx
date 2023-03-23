@@ -5,6 +5,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  margin: 10px;
   ${mobile({flexDirection: "column"})}
 `;
 

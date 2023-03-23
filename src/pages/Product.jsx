@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Announcement from "../components/Announcement";
+import NavBar from '../components/navbar-component/NavBar';
+import Announcement from '../components/announcement-component/Announcement';
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import pic1 from "../img/04.jpeg";
+import pic1 from "../img/furniture1.jpg";
 import { Add, Remove } from "@material-ui/icons";
 
 const Container = styled.div``;
@@ -21,6 +21,7 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  object-position: center;
 `;
 
 const InfoContainer = styled.div`
@@ -34,57 +35,68 @@ const Title = styled.h1`
 
 const Desc = styled.p`
   margin: 20px 0px;
-`;
+  `;
 
-const Price = styled.span`
+const Price = styled.div`
   font-weight: 100;
   font-size: 40px;
-`;
-
-const FilterContainer = styled.div`
-   width: 50%;
-   margin: 30px 0px;
-   display: flex;
-   justify-content: space-between;
-`;
-
-const Filter = styled.div`
   display: flex;
+  justify-content: center;
+//   background-color: black;
+  margin-bottom: 20px;
+`;
+
+
+
+const DetailContainer= styled.div`
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 50px;
+  margin: 15px;
 `;
 
-const FilterTitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
+
+const Detail = styled.span`
+   display: flex;
+   align-items: center;
+   margin: 10px
 `;
 
-const FilterColor = styled.div`
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background-color: ${props=>props.color};
-   margin: 0px 5px;
-   cursor: pointer;
+
+const DetailInfo = styled.div`
+  font-weight: 100;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  //   background-color: black;
+  margin-bottom: 20px;
 `;
 
-const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
+const Details = styled.div`
+  font-weight: 100;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  color: teal;
+  margin-bottom: 20px;
+  margin-left: 20px;
 `;
-
-const FilterSizeOption= styled.option``;
 
 const AddContainer = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const AmountContainer = styled.div`
    display: flex;
    align-items: center;
    font-weight: 700;
+   margin: 30px 0px;
 `;
 
 const Amount = styled.span`
@@ -95,7 +107,7 @@ const Amount = styled.span`
    display: flex;
    align-items: center;
    justify-content: center;
-   margin: 0px 5px;
+   margin: 0px 20px;
 `;
 
 const Button = styled.button`
@@ -104,6 +116,8 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
+  width: 80%;
+  border-radius: 20px;
 
   &:hover{
      background-color: #f8f4f4;
@@ -115,37 +129,25 @@ const Button = styled.button`
 const Product = () => {
   return (
      <Container>
-        <Navbar/>
+        <NavBar/>
         <Announcement/>
         <Wrapper>
            <ImgContainer>
               <Image src={pic1}/>
            </ImgContainer>
            <InfoContainer>
-           <Title>Heavy weather coat</Title>
+           <Title>2 wooden chair and Soft table</Title>
            <Desc>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                Dolores fuga repellat facilis culpa, illum et.
                 Fuga, repellat accusantium at nulla veniam natus molestiae quaerat unde possimus.
                  Eveniet tempora reprehenderit temporibus.</Desc>
+                 <DetailContainer>
+                   <Detail>
+                    <DetailInfo>Location:</DetailInfo>
+                    <Details>Mbeya</Details>
+                     </Detail>
+                 </DetailContainer>
            <Price>12000 Tsh</Price>
-           <FilterContainer>
-              <Filter>
-                 <FilterTitle>Color</FilterTitle>
-                 <FilterColor color="pink"/>
-                 <FilterColor color="lightblue"/>
-                 <FilterColor color="black"/>
-              </Filter>
-              {/* <Filter>
-                 <FilterTitle>Size</FilterTitle>
-                 <FilterSize>
-                    <FilterSizeOption>XS</FilterSizeOption>
-                    <FilterSizeOption>S</FilterSizeOption>
-                    <FilterSizeOption>M</FilterSizeOption>
-                    <FilterSizeOption>L</FilterSizeOption>
-                    <FilterSizeOption>XL</FilterSizeOption>
-                 </FilterSize>
-              </Filter> */}
-           </FilterContainer>
            <AddContainer>
               <AmountContainer>
                  <Remove/>

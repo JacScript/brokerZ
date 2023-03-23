@@ -1,7 +1,7 @@
 import { ArrowLeftOutlined , ArrowRightOutlined } from "@material-ui/icons";
 import { useState, useCallback } from "react";
 import styled from "styled-components";
-import { popularItems2, popularItems3 } from "../data";
+import { popularItems2, popularItems3} from "../data";
 import Product from "./Product";
 
 const Container = styled.div`
@@ -35,12 +35,15 @@ const Arrow = styled.div`
    margin: auto;
    cursor: pointer;
    opacity: 1;
-   z-index: 20000;
+   z-index: 40;
 
    &:hover{
     background-color: #fff7f7;
     color: teal;
+    opacity: 1;
   }
+
+  
 `;
 
 const Wrapper = styled.div`
@@ -123,7 +126,7 @@ const ProductListSlider = (item) => {
 
 
     return (
-        <Container>
+        <Container> 
             <SliderContainer>
                 <Arrow direction="left" onClick={() => handleClick("left")}>
                     <ArrowLeftOutlined />
